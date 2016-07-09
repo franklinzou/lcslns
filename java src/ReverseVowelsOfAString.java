@@ -8,7 +8,7 @@ public class ReverseVowelsOfAString {
             if(!isVowel(cArr[l])) l++;
             else if(!isVowel(cArr[r])) r--;
             else{
-                char tmp = s.charAt(l);
+                char tmp = cArr[l];
                 cArr[l] = cArr[r];
                 cArr[r] = tmp;
                 l++;

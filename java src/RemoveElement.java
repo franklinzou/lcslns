@@ -1,4 +1,5 @@
 /*
+ * Remove Element
  * Tag: Two Pointers
  * Tag: Array
  */

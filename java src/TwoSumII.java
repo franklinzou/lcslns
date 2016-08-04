@@ -1,10 +1,12 @@
 /*
+ * Two Sum II - Input array is sorted
  * Tag: Two Pointers
  * Tag: Array
  * Tag: Binary Search
  */
 public class TwoSumII {
     public int[] twoSum(int[] numbers, int target) {
+        /*
         // two pointer method
         int len = numbers.length;
         int l = 0, r = len - 1;
@@ -21,6 +23,29 @@ public class TwoSumII {
         }
         
         return res;
+        */
         // TODO: binary search method
+        int n = numbers.length;
+        int [] res = new int[2];
+        for(int i = 0; i <= n - 2; i++){
+            int counterPart = binSearch(numbers, i + 1, n - 1, target - numbers[i]);
+            if(counterPart != -1){
+                res[0] = i + 1;
+                res[1] = counterPart + 1;
+                break;
+            }
+        }
+        return res;
+    }
+    
+    private int binSearch(int [] nums, int s, int e, int target){
+        int l = s, r = e;
+        while(l <= r){
+            int m = l + (r - l + 1) / 2;
+            if(nums[m] == target) return m;
+            else if(nums[m] < target) l = m + 1;
+            else r = m - 1;
+        }
+        return -1;
     }
 }

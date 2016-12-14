@@ -15,20 +15,22 @@ public class BinaryTreeInorderTraversal {
         return res;
         */
         // iterative method
-        // TODO: complete analysis
+        // Basic idea: use stack to simulate system. Use root to simulate input parameter for
+        // recursion method
         List<Integer> res = new ArrayList<Integer>();
         Stack<TreeNode> s = new Stack<TreeNode>();
         TreeNode cur = root;
         while(true){
             if(cur != null){
-                s.push(cur);
-                cur = cur.left;
+                s.push(cur); // save invocation context
+                cur = cur.left; // update parameter for next invocation
             }
             else{
-                if(s.empty()) break;
+                // when cur == null, retrieve last invocation context
+                if(s.empty()) break; // if no stored context, algorithm ends
                 TreeNode tp = s.pop();
                 res.add(tp.val);
-                cur = tp.right;
+                cur = tp.right; // update parameter for next invocation
             }
         }
         return res;

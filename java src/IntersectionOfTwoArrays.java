@@ -19,6 +19,7 @@ public class IntersectionOfTwoArrays {
         //we guarantee each number in nums1[S..p1 - 1] and nums2[S..p2-1] has been checked for its partner
         while(p1 < len1 && p2 < len2){
             if(p1 != 0 && nums1[p1] == nums1[p1 - 1]) p1++;
+            if(p2 != 0 && nums2[p2] == nums2[p2 - 1]) p2++;
             else if(nums1[p1] == nums2[p2]){
                 resList.add(nums1[p1]);
                 p1++;

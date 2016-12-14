@@ -22,7 +22,9 @@ public class BestMeetingPoint {
     private int getMinDis(int [] cntArr){
         int l = 0, r = cntArr.length - 1, d = 0;
         // typical scope-changing idea
-        // TODO: full analysis
+        // variation of two-pointer-symmetry problem, guarantee number of agents
+        // passed by l and r are the same. Do not detect target elements (actually 
+        // merged into general routine).
         while(l < r){
             int common = Math.min(cntArr[l], cntArr[r]);
             cntArr[l] -= common;

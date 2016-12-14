@@ -24,7 +24,7 @@ public class TwoSumII {
         
         return res;
         */
-        // TODO: binary search method
+        // binary search method
         int n = numbers.length;
         int [] res = new int[2];
         for(int i = 0; i <= n - 2; i++){

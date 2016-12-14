@@ -18,7 +18,7 @@ public class LineReflection {
             // use hash code to uniquely represent an point (in fact an integer pair)
             s.add(Arrays.hashCode(point));
         }
-        // TODO: full logical analysis
+        // symmetry <=> for any point (x, y), (expSum - x, y) exists
         int expSum = minX + maxX;
         for(int [] point : points)
             //check whether its counterpart by mid exists

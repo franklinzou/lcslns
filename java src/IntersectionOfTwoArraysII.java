@@ -9,7 +9,7 @@ import java.util.*;
 
 public class IntersectionOfTwoArraysII {
     public int[] intersect(int[] nums1, int[] nums2) {
-        // two pointer based method - actually use dfs idea
+        // two pointer based method
         Arrays.sort(nums1);
         Arrays.sort(nums2);
         int len1 = nums1.length, p1 = 0;
@@ -18,6 +18,9 @@ public class IntersectionOfTwoArraysII {
         while(p1 < len1 && p2 < len2){
             if(nums1[p1] < nums2[p2]) p1++;
             else if(nums1[p1] > nums2[p2]) p2++;
+            // actually we need to avoid duplicate: repeated l or r in (l, r) pair
+            // so we increment l and r when a match is found (this l, r with any other
+            // number is invalid due to duplicate)
             else{
                 resList.add(nums1[p1]);
                 p1++;
@@ -31,7 +34,5 @@ public class IntersectionOfTwoArraysII {
         return res;
         
         // TODO: hash map based method
-        
-        // TODO: binary search based method
     }
 }
